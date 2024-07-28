@@ -1,0 +1,119 @@
+<app-navbar-full></app-navbar-full>
+
+<!-- <form (ngSubmit)="addOrder()">
+  <br>
+  <label for="customerName">Customer Name:</label>
+  <input id="customerName" [(ngModel)]="order.customerName" name="customerName" required>
+  <br>
+  <label for="customerPhone">Mobile:</label>
+  <input type="number" id="customerPhone" [(ngModel)]="order.customerPhone" name="customerPhone" required>
+  <br>
+  <label for="customerEmail">Email:</label>
+  <input id="customerEmail" [(ngModel)]="order.customerEmail" name="customerEmail" required>
+  <br>
+  <label for="orderAmount">Order Cost:</label>
+  <input id="orderAmount" [(ngModel)]="order.orderAmount" name="orderAmount" required>
+  <br>
+  <label for="Amount Paid">Amount Paid:</label>
+  <input id="amountPaid" [(ngModel)]="order.amountPaid" name="orderAmount" required>
+  <br>
+  <label for="eventDate">Date:</label>
+  <input type="date" [value]="today" [min]="today" id="eventDate" [(ngModel)]="order.eventDate" name="eventDate" required>
+  <br>
+  <label for="eventLocation">Location:</label>
+  <input type="String"  id="eventLocation" [(ngModel)]="order.eventLocation" name="eventLocation" required>
+  <br>
+  <label for="orderType">Order type:</label>
+  <select id="orderType" [(ngModel)]="order.orderType" name="orderType" required>
+    <option value="Event Shoot">Event PhotoShoot</option>
+    <option value="Editing">Editing</option>
+    <option value="Photo Frames">Photo Frames</option>
+    <option value="Albums">Albums</option>
+  </select>
+  <br>
+  <label for="orderDescription">Description:</label>
+  <input id="orderDescription" [(ngModel)]="order.orderDescription" name="orderDescription" required><br>
+  <button type="submit">Add Order</button>
+</form>
+<button (click)="showToday()">TODAY</button> -->
+<h2>Add Order</h2>
+<div class="order-form">
+  <form (ngSubmit)="addOrder()" #orderForm="ngForm">
+    <div class="form-group" [ngClass]="{'has-error': customerName.invalid && (customerName.dirty || customerName.touched)}">
+      <label for="customerName">Customer Name</label>
+      <input type="text" id="customerName" name="customerName" [(ngModel)]="order.customerName" required #customerName="ngModel">
+      <div *ngIf="customerName.invalid && (customerName.dirty || customerName.touched)" class="error">
+        <div *ngIf="customerName.errors?.['required']">Customer Name is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': customerPhone.invalid && (customerPhone.dirty || customerPhone.touched)}">
+      <label for="customerPhone">Customer Phone</label>
+      <input type="tel" id="customerPhone" name="customerPhone" [(ngModel)]="order.customerPhone" required #customerPhone="ngModel">
+      <div *ngIf="customerPhone.invalid && (customerPhone.dirty || customerPhone.touched)" class="error">
+        <div *ngIf="customerPhone.errors?.['required']">Customer Phone is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': customerEmail.invalid && (customerEmail.dirty || customerEmail.touched)}">
+      <label for="customerEmail">Customer Email</label>
+      <input type="email" id="customerEmail" name="customerEmail" [(ngModel)]="order.customerEmail" required #customerEmail="ngModel">
+      <div *ngIf="customerEmail.invalid && (customerEmail.dirty || customerEmail.touched)" class="error">
+        <div *ngIf="customerEmail.errors?.['required']">Customer Email is required.</div>
+        <div *ngIf="customerEmail.errors?.['email']">Please enter a valid email address.</div>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': orderAmount.invalid && (orderAmount.dirty || orderAmount.touched)}">
+      <label for="orderAmount">Order Amount</label>
+      <input type="number" id="orderAmount" name="orderAmount" [(ngModel)]="order.orderAmount" required #orderAmount="ngModel">
+      <div *ngIf="orderAmount.invalid && (orderAmount.dirty || orderAmount.touched)" class="error">
+        <div *ngIf="orderAmount.errors?.['required']">Order Amount is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': amountPaid.invalid && (amountPaid.dirty || amountPaid.touched)}">
+      <label for="amountPaid">Amount Paid</label>
+      <input type="number" id="amountPaid" name="amountPaid" [(ngModel)]="order.amountPaid" required #amountPaid="ngModel">
+      <div *ngIf="amountPaid.invalid && (amountPaid.dirty || amountPaid.touched)" class="error">
+        <div *ngIf="amountPaid.errors?.['required']">Amount Paid is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': eventDate.invalid && (eventDate.dirty || eventDate.touched)}">
+      <label for="eventDate">Event Date</label>
+      <input type="date" [value]="today" [min]="today" id="eventDate" name="eventDate" [(ngModel)]="order.eventDate" required #eventDate="ngModel">
+      <div *ngIf="eventDate.invalid && (eventDate.dirty || eventDate.touched)" class="error">
+        <div *ngIf="eventDate.errors?.['required']">Event Date is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': eventLocation.invalid && (eventLocation.dirty || eventLocation.touched)}">
+      <label for="eventLocation">Event Location</label>
+      <input type="text" id="eventLocation" name="eventLocation" [(ngModel)]="order.eventLocation" required #eventLocation="ngModel">
+      <div *ngIf="eventLocation.invalid && (eventLocation.dirty || eventLocation.touched)" class="error">
+        <div *ngIf="eventLocation.errors?.['required']">Event Location is required.</div>
+      </div>
+    </div>
+    
+    <div class="form-group" [ngClass]="{'has-error': orderType.invalid && (orderType.dirty || orderType.touched)}">
+      <label for="orderType">Order Type</label>
+      <select id="orderType" [(ngModel)]="order.orderType" name="orderType" required #orderType="ngModel">
+        <option value="Event Shoot">Event PhotoShoot</option>
+        <option value="Editing">Editing</option>
+        <option value="Photo Frames">Photo Frames</option>
+        <option value="Albums">Albums</option>
+      </select>
+      <div *ngIf="orderType.invalid && (orderType.dirty || orderType.touched)" class="error">
+        <div *ngIf="orderType.errors?.['required']">Order Type is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="orderDescription">Order Description</label>
+      <textarea id="orderDescription" name="orderDescription" [(ngModel)]="order.orderDescription"></textarea>
+    </div>
+    
+    <button type="submit" [disabled]="orderForm.invalid">Add Order</button>
+  </form>
+</div>

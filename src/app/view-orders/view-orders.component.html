@@ -1,0 +1,85 @@
+<app-navbar-full></app-navbar-full>
+<h2>Orders</h2>
+
+  <h4>Ongoing Orders</h4>
+  <div *ngIf="ongoingOrders.length>0">
+  <table class="table table-striped">
+    <tr>
+      <th>Customer Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Order Type</th>
+      <th>Amount</th>
+      <th>Paid</th>
+      <th>Balance</th>
+      <th>Event Date</th>
+      <th>Event Location</th>
+      <th>Description</th>
+      <th>Order Status</th>
+      <th>Delivery Status</th> <th colspan="2">Actions</th>
+    </tr>
+    <tr *ngFor="let u of ongoingOrders">
+      <td>{{u.customerName}}</td>
+      <td>{{u.customerEmail}}</td>
+      <td>{{u.customerPhone}}</td>
+      <td>{{u.orderType}}</td>
+      <td>{{u.orderAmount}}</td>
+      <td>{{u.amountPaid}}</td>
+      <td>{{u.remainingBalance}}</td>
+      <td>{{u.eventDate | date:'dd-MM-yyyy'}}</td>
+      <td>{{u.eventLocation }}</td>
+      <td>{{u.orderDescription}}</td>
+      <td>{{u.closed | yesNo}}</td>
+      <td>{{u.delivered | yesNo}}</td>
+      <td>
+        <button  (click)="viewOrder(u.orderId)" >View Order</button>
+        <button  (click)="updateOrder(u.orderId)" >Update Order</button>
+
+      </td>
+    
+    </tr>
+  </table>
+</div>
+<div *ngIf="ongoingOrders.length==0"><h3>No ongoing orders!</h3></div>
+
+<div *ngIf="completedOrders.length>0">
+  <h4>Completed Orders</h4>
+  <table class="table table-striped">
+    <tr>
+      <th>Customer Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Order Type</th>
+      <th>Amount</th>
+      <th>Paid</th>
+      <th>Balance</th>
+      <th>Event Date</th>
+      <th>Event Location</th>
+      <th>Description</th>
+      <th>Order Status</th>
+      <th>Delivery Status</th> <th colspan="2">Actions</th>
+    </tr>
+    <tr *ngFor="let u of completedOrders">
+      <td>{{u.customerName}}</td>
+      <td>{{u.customerEmail}}</td>
+      <td>{{u.customerPhone}}</td>
+      <td>{{u.orderType}}</td>
+      <td>{{u.orderAmount}}</td>
+      <td>{{u.amountPaid}}</td>
+      <td>{{u.remainingBalance}}</td>
+      <td>{{u.eventDate | date:'dd-MM-yyyy'}}</td>
+      <td>{{u.eventLocation }}</td>
+      <td>{{u.orderDescription}}</td>
+      <td>{{u.closed | yesNo}}</td>
+      <td>{{u.delivered | yesNo}}</td>
+      <td>
+        <button (click)="printInvoice(u.orderId)" >Print Invoice</button>
+      </td>
+    
+    </tr>
+  </table>
+</div>
+<div *ngIf="completedOrders.length==0"><h3>No Completed orders!</h3></div>
+
+
+<router-outlet></router-outlet>

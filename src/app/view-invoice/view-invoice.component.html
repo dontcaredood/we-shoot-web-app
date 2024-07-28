@@ -1,0 +1,63 @@
+<div *ngIf="order" id="invoice" class="invoice">
+    <div class="invoice-header">
+      <div class="company-details">
+        <h1>We Shoot Photo Company</h1>
+        <p>123 Photography Lane</p>
+        <p>Madurai, TamilNadu, 625301</p>
+        <p>Phone: +91 9363583143</p>
+        <p>Email: weshootphotocompanyoff.com</p>
+      </div>
+      <div class="invoice-details">
+        <h2>Invoice</h2>
+        <p><strong>Date:</strong> {{ today }}</p>
+        <p><strong>Invoice #:</strong> {{ order.orderId }}</p>
+      </div>
+    </div>
+    
+    <div class="customer-details">
+      <h2>Customer Details</h2>
+      <p><strong>Name:</strong> {{ order.customerName }}</p>
+      <p><strong>Phone:</strong> {{ order.customerPhone }}</p>
+      <p><strong>Email:</strong> {{ order.customerEmail }}</p>
+    </div>
+    
+    <div class="billing-details">
+      <h2>Billing Details</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Cost</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ order.orderType }}</td>
+            <td>{{ order.orderAmount }}</td>
+            <td>{{ order.amountPaid }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="order-description">
+      <h2>Order Description</h2>
+      <p>{{ order.orderDescription }}</p>
+    </div>
+    
+    <div class="invoice-footer">
+      <p>Thank you for your business!</p>
+      <div class="contact-details">
+        <p>If you have any questions about this invoice, please contact:</p>
+        <p>Phone: +91 9363583143</p>
+        <p>Email: weshootphotocompanyoff.com</p>
+      </div>
+    </div>
+    <button (click)="downloadPDF()" id="downloadButton">Download Invoice</button>
+  </div>
+  
+  <div>
+    
+  </div>
+  

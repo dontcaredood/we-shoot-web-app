@@ -1,0 +1,74 @@
+.home-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+  }
+  
+  .about-section,
+  .services-section,
+  .gallery-section {
+    margin: 20px 0;
+  }
+  
+  .about-section h2,
+  .services-section h2,
+  .gallery-section h2 {
+    color: #4CAF50;
+  }
+  
+  .about-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  .services-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .services-section li {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .images-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .images-section img {
+        width: 400px; /* Increase the width */
+        height: 500px; /* Increase the height */
+        margin: 15px; /* Increase the margin */
+        transition: transform 0.5s ease-in-out; /* More pronounced transition */
+      }
+  
+  .images-section img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  

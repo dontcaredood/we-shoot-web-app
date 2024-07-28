@@ -1,0 +1,121 @@
+<app-navbar-full></app-navbar-full>
+  <div *ngIf="order">
+  <div class="order-form" id="invoice">
+    <form (ngSubmit)="updateOrder()">
+      <div class="form-group">
+        <label for="customerName">Customer Name</label>
+        <input type="text" id="customerName" name="customerName" [(ngModel)]="order.customerName" [disabled]="!editable">
+      </div>
+      <div class="form-group">
+        <label for="customerPhone">Customer Phone</label>
+        <input type="tel" id="customerPhone" name="customerPhone" [(ngModel)]="order.customerPhone"[disabled]="!editable" >
+      </div>
+      <div class="form-group">
+        <label for="customerEmail">Customer Email</label>
+        <input type="email" id="customerEmail" name="customerEmail" [(ngModel)]="order.customerEmail" [disabled]="!editable">
+      </div>
+      <div class="form-group">
+        <label for="orderAmount">Order Amount</label>
+        <input type="number" id="orderAmount" name="orderAmount" [(ngModel)]="order.orderAmount" [disabled]="!editable">
+      </div>
+      <div class="form-group">
+        <label for="amountPaid">Amount Paid</label>
+        <input type="number" id="amountPaid" name="amountPaid" [(ngModel)]="order.amountPaid" [disabled]="!editable" >
+      </div>
+      <div class="form-group">
+        <label for="eventDate">Event Date</label>
+        <input type="date" [value]="today" [min]="today" id="eventDate" name="eventDate" [(ngModel)]="order.eventDate" [disabled]="!editable">
+      </div>
+      <div class="form-group">
+        <label for="eventLocation">Event Location</label>
+        <input type="text" id="eventLocation" name="eventLocation" [(ngModel)]="order.eventLocation" [disabled]="!editable">
+      </div>
+      
+      <div class="form-group">
+        <label for="orderType">Order Type</label>
+        <select class="form-group" id="orderType" [(ngModel)]="order.orderType" name="orderType" [disabled]="!editable">
+          <option value="Event Shoot">Event PhotoShoot</option>
+          <option value="Editing">Editing</option>
+          <option value="Photo Frames">Photo Frames</option>
+          <option value="Albums">Albums</option>
+        </select>
+        
+      </div>
+      <div class="form-group">
+        <label for="orderDescription">Order Description</label>
+        <textarea id="orderDescription" name="orderDescription" [(ngModel)]="order.orderDescription" [disabled]="!editable"></textarea>
+      </div>
+      <div>
+        <button (click)="edit()">Edit</button>
+        <button type="submit">Update Order</button>
+      </div>
+      
+    </form>
+    <button (click)="downloadPDF()">Download PDF</button>
+  </div>
+  </div>
+  <div *ngIf="!order">
+    <p>Loading order details...</p>
+  </div>
+  <div *ngIf="order" id="invoice" class="invoice">
+    <div class="invoice-header">
+      <div class="company-details">
+        <h1>We Shoot Photo Company</h1>
+        <p>123 Photography Lane</p>
+        <p>City, State, ZIP</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@weshoot.com</p>
+      </div>
+      <div class="invoice-details">
+        <h2>Invoice</h2>
+        <p><strong>Date:</strong> {{ today }}</p>
+        <p><strong>Invoice #:</strong> {{ order.orderId }}</p>
+      </div>
+    </div>
+    
+    <div class="customer-details">
+      <h2>Customer Details</h2>
+      <p><strong>Name:</strong> {{ order.customerName }}</p>
+      <p><strong>Phone:</strong> {{ order.customerPhone }}</p>
+      <p><strong>Email:</strong> {{ order.customerEmail }}</p>
+    </div>
+    
+    <div class="billing-details">
+      <h2>Billing Details</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Cost</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ order.orderType }}</td>
+            <td>{{ order.orderAmount }}</td>
+            <td>{{ order.amountPaid }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="order-description">
+      <h2>Order Description</h2>
+      <p>{{ order.orderDescription }}</p>
+    </div>
+    
+    <div class="invoice-footer">
+      <p>Thank you for your business!</p>
+      <div class="contact-details">
+        <p>If you have any questions about this invoice, please contact:</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: support@weshoot.com</p>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <button (click)="downloadPDF()">Download ladojaod PDF</button>
+  </div>
+  
