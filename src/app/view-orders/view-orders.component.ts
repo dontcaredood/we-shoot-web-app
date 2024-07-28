@@ -12,6 +12,7 @@ export class ViewOrdersComponent implements OnInit {
   ongoingOrders: Order[] = [];
   completedOrders: Order[] = [];
   orderCount: number = 0;
+  expandedOrderId: number | null = 0;
 
   constructor(private orderService: OrderService, private router:Router,
     private route: ActivatedRoute,
@@ -59,5 +60,9 @@ export class ViewOrdersComponent implements OnInit {
     console.log(url)
     this.router.navigateByUrl(url);
     //this.router.navigate(['order'], {relativeTo:this.route});
+  }
+
+  toggleOrder(orderId: number): void {
+    this.expandedOrderId = this.expandedOrderId === orderId ? null : orderId;
   }
 }

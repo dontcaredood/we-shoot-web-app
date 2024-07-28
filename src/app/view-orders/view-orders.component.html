@@ -81,5 +81,101 @@
 </div>
 <div *ngIf="completedOrders.length==0"><h3>No Completed orders!</h3></div>
 
+<div class="orders-container">
+  <h4>Ongoing Orders</h4>
+  <div class="card" *ngFor="let order of ongoingOrders">
+    <div class="card-header">
+      <h5>{{ order.customerName }}</h5>
+      <p>{{ order.customerEmail }}</p>
+    </div>
+    <div class="card-body">
+      <p><strong>Phone:</strong> {{ order.customerPhone }}</p>
+      <p><strong>Order Type:</strong> {{ order.orderType }}</p>
+      <p><strong>Amount:</strong> {{ order.orderAmount }}</p>
+      <p><strong>Paid:</strong> {{ order.amountPaid }}</p>
+      <p><strong>Balance:</strong> {{ order.remainingBalance }}</p>
+      <p><strong>Event Date:</strong> {{ order.eventDate | date:'dd-MM-yyyy' }}</p>
+      <p><strong>Event Location:</strong> {{ order.eventLocation }}</p>
+      <p><strong>Description:</strong> {{ order.orderDescription }}</p>
+      <p><strong>Order Status:</strong> {{ order.closed | yesNo }}</p>
+      <p><strong>Delivery Status:</strong> {{ order.delivered | yesNo }}</p>
+    </div>
+    <div class="card-footer">
+      <button class="view-order-button" (click)="viewOrder(order.orderId)">View Order</button>
+    </div>
+  </div>
+
+  <h4>Completed Orders</h4>
+  <div class="card" *ngFor="let order of completedOrders">
+    <div class="card-header">
+      <h5>{{ order.customerName }}</h5>
+      <p>{{ order.customerEmail }}</p>
+    </div>
+    <div class="card-body">
+      <p><strong>Phone:</strong> {{ order.customerPhone }}</p>
+      <p><strong>Order Type:</strong> {{ order.orderType }}</p>
+      <p><strong>Amount:</strong> {{ order.orderAmount }}</p>
+      <p><strong>Paid:</strong> {{ order.amountPaid }}</p>
+      <p><strong>Balance:</strong> {{ order.remainingBalance }}</p>
+      <p><strong>Event Date:</strong> {{ order.eventDate | date:'dd-MM-yyyy' }}</p>
+      <p><strong>Event Location:</strong> {{ order.eventLocation }}</p>
+      <p><strong>Description:</strong> {{ order.orderDescription }}</p>
+      <p><strong>Order Status:</strong> {{ order.closed | yesNo }}</p>
+      <p><strong>Delivery Status:</strong> {{ order.delivered | yesNo }}</p>
+    </div>
+    <div class="card-footer">
+      <button class="view-order-button" (click)="viewOrder(order.orderId)">View Order</button>
+    </div>
+  </div>
+</div>
+
+<div class="orders-container">
+  <h4>Ongoing Orders</h4>
+  <div class="card" *ngFor="let order of ongoingOrders" (click)="toggleOrder(order.orderId)" [ngClass]="{'expanded': expandedOrderId === order.orderId}">
+    <div class="card-header">
+      <h5>{{ order.customerName }}</h5>
+      <p>{{ order.customerEmail }}</p>
+    </div>
+    <div class="card-body" *ngIf="expandedOrderId === order.orderId">
+      <p><strong>Phone:</strong> {{ order.customerPhone }}</p>
+      <p><strong>Order Type:</strong> {{ order.orderType }}</p>
+      <p><strong>Amount:</strong> {{ order.orderAmount }}</p>
+      <p><strong>Paid:</strong> {{ order.amountPaid }}</p>
+      <p><strong>Balance:</strong> {{ order.remainingBalance }}</p>
+      <p><strong>Event Date:</strong> {{ order.eventDate | date:'dd-MM-yyyy' }}</p>
+      <p><strong>Event Location:</strong> {{ order.eventLocation }}</p>
+      <p><strong>Description:</strong> {{ order.orderDescription }}</p>
+      <p><strong>Order Status:</strong> {{ order.closed | yesNo }}</p>
+      <p><strong>Delivery Status:</strong> {{ order.delivered | yesNo }}</p>
+    </div>
+    <div class="card-footer" *ngIf="expandedOrderId === order.orderId">
+      <button class="view-order-button" (click)="viewOrder(order.orderId)">View Order</button>
+    </div>
+  </div>
+
+  <h4>Completed Orders</h4>
+  <div class="card" *ngFor="let order of completedOrders" (click)="toggleOrder(order.orderId)" [ngClass]="{'expanded': expandedOrderId === order.orderId}">
+    <div class="card-header">
+      <h5>{{ order.customerName }}</h5>
+      <p>{{ order.customerEmail }}</p>
+    </div>
+    <div class="card-body" *ngIf="expandedOrderId === order.orderId">
+      <p><strong>Phone:</strong> {{ order.customerPhone }}</p>
+      <p><strong>Order Type:</strong> {{ order.orderType }}</p>
+      <p><strong>Amount:</strong> {{ order.orderAmount }}</p>
+      <p><strong>Paid:</strong> {{ order.amountPaid }}</p>
+      <p><strong>Balance:</strong> {{ order.remainingBalance }}</p>
+      <p><strong>Event Date:</strong> {{ order.eventDate | date:'dd-MM-yyyy' }}</p>
+      <p><strong>Event Location:</strong> {{ order.eventLocation }}</p>
+      <p><strong>Description:</strong> {{ order.orderDescription }}</p>
+      <p><strong>Order Status:</strong> {{ order.closed | yesNo }}</p>
+      <p><strong>Delivery Status:</strong> {{ order.delivered | yesNo }}</p>
+    </div>
+    <div class="card-footer" *ngIf="expandedOrderId === order.orderId">
+      <button class="view-order-button" (click)="viewOrder(order.orderId)">View Order</button>
+    </div>
+  </div>
+</div>
+
 
 <router-outlet></router-outlet>
