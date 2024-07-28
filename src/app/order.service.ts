@@ -9,7 +9,7 @@ import { OrderResponse } from './orderResponse';
 })
 export class OrderService {
   //private apiUrl = 'http://localhost:8080/we-shoot'; 
-  private apiUrl = "https://weshoot-api-50021575749.development.catalystappsail.in"
+  private apiUrl = "https://weshoot-api-50021575749.development.catalystappsail.in/we-shoot/"
   // Replace with your actual API URL
   orders:string = "/orders"
   add_orders:string = "/add-order"
