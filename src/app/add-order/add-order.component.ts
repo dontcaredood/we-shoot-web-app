@@ -29,7 +29,7 @@ export class AddOrderComponent {
     this.orderService.addOrder(this.order).subscribe(response => {
       console.log("TODAY "+this.today)
       alert('Order added successfully!');
-      this.router.navigate(['/']);
+      this.router.navigate(['/view-orders']);
       this.order = { id: '', description: '', amount: '' }; // Reset form
     });
   } else {

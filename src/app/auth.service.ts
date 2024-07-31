@@ -8,8 +8,8 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  //private loginUrl = 'http://localhost:8080/we-shoot/auth/login';
-  private loginUrl = "https://weshoot-api-50021575749.development.catalystappsail.in/we-shoot/auth/login";
+  private loginUrl = 'http://localhost:8080/we-shoot/auth/login';
+  //private loginUrl = "https://weshoot-api-50021575749.development.catalystappsail.in/we-shoot/auth/login";
    /// Update with your API endpoint
   private loggedIn = false;
 

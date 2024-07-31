@@ -1,0 +1,26 @@
+<app-navbar-full></app-navbar-full>
+<div *ngIf="orderHistories.length > 0">
+    <h3>Order History</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Action</th>
+          <th>Time Stamp</th>
+          <th>User</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let history of orderHistories">
+          <td>{{ history.action }}</td>
+          <td>{{ history.timeStamp | date: 'dd-MM-yyyy HH:mm:ss' }}</td>
+          <td>{{ history.userName }}</td>
+          <td>{{ history.data }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="orderHistories.length === 0">
+    <p>No order history found.</p>
+  </div>
+  <app-footer></app-footer>

@@ -1,39 +1,37 @@
 <app-navbar-full></app-navbar-full>
 <h2>Orders</h2>
 
-  <h4>Ongoing Orders</h4>
+  
   <div *ngIf="ongoingOrders.length>0">
+    <h4>Ongoing Orders: {{ongoingOrders.length}}</h4>
   <table class="table table-striped">
     <tr>
       <th>Customer Name</th>
-      <th>Email</th>
-      <th>Phone</th>
+      <th hidden="true">Email</th>
+      <th hidden="true">Phone</th>
       <th>Order Type</th>
       <th>Amount</th>
       <th>Paid</th>
       <th>Balance</th>
       <th>Event Date</th>
       <th>Event Location</th>
-      <th>Description</th>
-      <th>Order Status</th>
-      <th>Delivery Status</th> <th colspan="2">Actions</th>
+      <th hidden="true">Description</th> <th colspan="2">Actions</th>
     </tr>
     <tr *ngFor="let u of ongoingOrders">
       <td>{{u.customerName}}</td>
-      <td>{{u.customerEmail}}</td>
-      <td>{{u.customerPhone}}</td>
+      <td hidden="true">{{u.customerEmail}}</td>
+      <td hidden="true">{{u.customerPhone}}</td>
       <td>{{u.orderType}}</td>
       <td>{{u.orderAmount}}</td>
       <td>{{u.amountPaid}}</td>
       <td>{{u.remainingBalance}}</td>
       <td>{{u.eventDate | date:'dd-MM-yyyy'}}</td>
       <td>{{u.eventLocation }}</td>
-      <td>{{u.orderDescription}}</td>
-      <td>{{u.closed | yesNo}}</td>
-      <td>{{u.delivered | yesNo}}</td>
+      <td hidden="true">{{u.orderDescription}}</td>
       <td>
-        <button  (click)="viewOrder(u.orderId)" >View Order</button>
-        <button  (click)="updateOrder(u.orderId)" >Update Order</button>
+        <button  (click)="orderHistory(u.orderId)" ><i style="font-size:24px" class="fa">&#xf1da;</i></button>
+        <button  (click)="updateOrder(u.orderId)" ><i style="font-size:24px" class="fa">&#xf044;</i></button>
+
 
       </td>
     
@@ -43,44 +41,45 @@
 <div *ngIf="ongoingOrders.length==0"><h3>No ongoing orders!</h3></div>
 
 <div *ngIf="completedOrders.length>0">
-  <h4>Completed Orders</h4>
+  <h4>Completed Orders {{completedOrders.length}}</h4>
   <table class="table table-striped">
     <tr>
       <th>Customer Name</th>
-      <th>Email</th>
-      <th>Phone</th>
+      <th hidden="true">Email</th>
+      <th hidden="true">Phone</th>
       <th>Order Type</th>
       <th>Amount</th>
       <th>Paid</th>
       <th>Balance</th>
       <th>Event Date</th>
       <th>Event Location</th>
-      <th>Description</th>
-      <th>Order Status</th>
-      <th>Delivery Status</th> <th colspan="2">Actions</th>
+      <th hidden="true">Description</th>
+      <th hidden="true">Order Status</th>
+      <th hidden="true">Delivery Status</th> <th colspan="2">Actions</th>
     </tr>
     <tr *ngFor="let u of completedOrders">
       <td>{{u.customerName}}</td>
-      <td>{{u.customerEmail}}</td>
-      <td>{{u.customerPhone}}</td>
+      <td hidden="true">{{u.customerEmail}}</td>
+      <td hidden="true">{{u.customerPhone}}</td>
       <td>{{u.orderType}}</td>
       <td>{{u.orderAmount}}</td>
       <td>{{u.amountPaid}}</td>
       <td>{{u.remainingBalance}}</td>
       <td>{{u.eventDate | date:'dd-MM-yyyy'}}</td>
       <td>{{u.eventLocation }}</td>
-      <td>{{u.orderDescription}}</td>
-      <td>{{u.closed | yesNo}}</td>
-      <td>{{u.delivered | yesNo}}</td>
-      <td>
-        <button (click)="printInvoice(u.orderId)" >Print Invoice</button>
+      <td hidden="true">{{u.orderDescription}}</td>
+      <td hidden="true">{{u.closed | yesNo}}</td>
+      <td hidden="true">{{u.delivered | yesNo}}</td>
+      <td class="button-cell">
+        <button  (click)="orderHistory(u.orderId)" ><i style="font-size:24px" class="fa">&#xf1da;</i></button>
+        <button (click)="printInvoice(u.orderId)" ><i style="font-size:24px" class="fa">&#xf02f;</i></button>
       </td>
     
     </tr>
   </table>
 </div>
 <div *ngIf="completedOrders.length==0"><h3>No Completed orders!</h3></div>
-
+<!-- 
 <div class="orders-container">
   <h4>Ongoing Orders</h4>
   <div class="card" *ngFor="let order of ongoingOrders">
@@ -176,6 +175,6 @@
     </div>
   </div>
 </div>
-
+ -->
 
 <router-outlet></router-outlet>

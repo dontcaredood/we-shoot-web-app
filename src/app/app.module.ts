@@ -16,6 +16,10 @@ import { NavbarFullComponent } from './navbar-full/navbar-full.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TrackOrderComponent } from './track-order/track-order.component';
+import { OrderViewComponent } from './order-view/order-view.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +35,17 @@ import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
     NavbarFullComponent,
     DashboardComponent,
     FooterComponent,
-    ViewInvoiceComponent
+    ViewInvoiceComponent,
+    OrderHistoryComponent,
+    TrackOrderComponent,
+    OrderViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule // Add HttpClientModule
+    FormsModule,
+    BrowserAnimationsModule // Add HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

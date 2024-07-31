@@ -180,3 +180,43 @@
     margin-top: 40px;
   }
   
+  .button-cell {
+    text-align: center;
+  }
+  
+  .button-cell button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .button-cell button i {
+    font-size: 24px;
+  }
+  
+  .button-cell button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+  }
+  /* track-order.component.css */
+mat-form-field {
+  width: 100%;
+}
+
+mat-dialog-content {
+  overflow: hidden;
+}
+
+mat-dialog-actions {
+  justify-content: flex-end;
+}

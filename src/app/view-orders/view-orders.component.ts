@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../order.service';
-import { Order } from '../order';
+import { Order } from '../models/order';
 import { ActivatedRoute,Router } from '@angular/router';
+
 @Component({
   selector: 'app-view-orders',
   templateUrl: './view-orders.component.html',
@@ -15,7 +16,7 @@ export class ViewOrdersComponent implements OnInit {
   expandedOrderId: number | null = 0;
 
   constructor(private orderService: OrderService, private router:Router,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -30,13 +31,13 @@ export class ViewOrdersComponent implements OnInit {
   }
   filterCompletedOrders(orders:Order[]){
     console.log("Completed Orders")
-    console.log(orders[1].closed)
+    //console.log(orders[1].closed)
     return orders.filter(order=> order.closed==true && order.delivered==true)
   }
   
   filterOngoingOrders(orders:Order[]){
     console.log("Completed Orders")
-    console.log(orders[1].closed)
+    //console.log(orders[1].closed)
     return orders.filter(order=> order.closed==false || order.delivered==false)
   }
   viewOrder(id:number){
@@ -53,6 +54,13 @@ export class ViewOrdersComponent implements OnInit {
     this.router.navigateByUrl(url);
     //this.router.navigate(['order'], {relativeTo:this.route});
   }
+  orderHistory(id:number){
+    console.log("ID: "+id)
+    let url: string = "/orderHistory/" + id
+    console.log(url)
+    this.router.navigateByUrl(url);
+    //this.router.navigate(['order'], {relativeTo:this.route});
+  }
 
   updateOrder(id:number){
     console.log("ID: "+id)
@@ -65,4 +73,6 @@ export class ViewOrdersComponent implements OnInit {
   toggleOrder(orderId: number): void {
     this.expandedOrderId = this.expandedOrderId === orderId ? null : orderId;
   }
+
+  
 }

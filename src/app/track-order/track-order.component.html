@@ -1,0 +1,38 @@
+<!-- orderStatus-form.component.html -->
+<h2>Order Form</h2>
+<form (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="orderStatusStatus">Order Status</label>
+    <select id="orderStatusStatus" name="orderStatusStatus" [(ngModel)]="orderStatus.orderStatus" required>
+      <option value="Completed">Completed</option>
+      <option value="InProgress">In Progress</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="deliveryStatus">Delivery Status</label>
+    <select id="deliveryStatus" name="deliveryStatus" [(ngModel)]="orderStatus.deliveryStatus" required>
+      <option value="Completed">Completed</option>
+      <option value="InProgress">In Progress</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+  </div>
+ <div class="form-group">
+        <label for="orderStatusAmount">Total Amount</label>
+    <input type="number" id="orderStatusAmount" name="orderStatusAmount" [(ngModel)]="orderStatus.orderAmount" disabled>
+</div>
+<div class="form-group">
+    <label for="amountPaid">Amount Paid</label>
+<input type="number" id="orderStatusAmount" name="amountPaid" [(ngModel)]="orderStatus.amountPaid" disabled>
+</div>
+<div class="form-group">
+    <label for="balanceAmount">Remaining Amount</label>
+<input type="number" id="balanceAmount" name="balanceAmount" [(ngModel)]="orderStatus.balanceAmount" disabled>
+</div>
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" name="amount" [(ngModel)]="orderStatus.amount" required>
+  </div>
+  <button type="submit">Submit</button>
+</form>

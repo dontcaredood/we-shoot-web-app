@@ -1,3 +1,4 @@
+<app-navbar-full></app-navbar-full>
 <div *ngIf="order" id="invoice" class="invoice">
     <div class="invoice-header">
       <div class="company-details">
@@ -53,11 +54,10 @@
         <p>Phone: +91 9363583143</p>
         <p>Email: weshootphotocompanyoff.com</p>
       </div>
-    </div>
-    <button (click)="downloadPDF()" id="downloadButton">Download Invoice</button>
-  </div>
+    
   
   <div>
-    
   </div>
-  
+</div>
+<button (click)="downloadPDF()" id="downloadButton">Download Invoice</button>
+</div>

@@ -1,0 +1,14 @@
+<app-navbar-full></app-navbar-full>
+<div>
+  <button (click)="enableVO()" >Update Order</button>
+  <button (click)="enableTO()">Track Order</button>
+</div>
+<fieldset  [hidden]="!viewOrderEnabled">
+    <app-view-order-details></app-view-order-details>
+</fieldset>
+<fieldset  [hidden]="!trackOrderEnabled">
+    <app-track-order></app-track-order>
+</fieldset >
+
+
+<app-footer></app-footer>

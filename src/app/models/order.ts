@@ -39,7 +39,6 @@ export class Order {
       this.remainingBalance = remainingBalance;
       this.closed= closed;
       this.delivered=delivered;
-
     }
   }
   

@@ -1,39 +1,52 @@
-<app-navbar-full></app-navbar-full>
+
+
+
   <div *ngIf="order">
   <div class="order-form" id="invoice">
-    <form (ngSubmit)="updateOrder()">
+    <!-- Add this button somewhere in your view-order-details.component.html -->
+    <div>
+      <button (click)="edit()"><i style="font-size:24px" class="fa">&#xf044;</i></button>
+    </div>
+    <form (ngSubmit)="updateOrderDetails()">
       <div class="form-group">
         <label for="customerName">Customer Name</label>
-        <input type="text" id="customerName" name="customerName" [(ngModel)]="order.customerName" [disabled]="!editable">
+        <input type="text" id="customerName" name="customerName" [(ngModel)]="order.customerName" [disabled]="editable">
       </div>
       <div class="form-group">
         <label for="customerPhone">Customer Phone</label>
-        <input type="tel" id="customerPhone" name="customerPhone" [(ngModel)]="order.customerPhone"[disabled]="!editable" >
+        <input type="tel" id="customerPhone" name="customerPhone" [(ngModel)]="order.customerPhone"[disabled]="editable" >
       </div>
       <div class="form-group">
         <label for="customerEmail">Customer Email</label>
-        <input type="email" id="customerEmail" name="customerEmail" [(ngModel)]="order.customerEmail" [disabled]="!editable">
+        <input type="email" id="customerEmail" name="customerEmail" [(ngModel)]="order.customerEmail" [disabled]="editable">
       </div>
       <div class="form-group">
         <label for="orderAmount">Order Amount</label>
-        <input type="number" id="orderAmount" name="orderAmount" [(ngModel)]="order.orderAmount" [disabled]="!editable">
+        <input type="number" id="orderAmount" name="orderAmount" [(ngModel)]="order.orderAmount" [disabled]="editable">
       </div>
       <div class="form-group">
         <label for="amountPaid">Amount Paid</label>
-        <input type="number" id="amountPaid" name="amountPaid" [(ngModel)]="order.amountPaid" [disabled]="!editable" >
+        <input type="number" id="amountPaid" name="amountPaid" [(ngModel)]="order.amountPaid" [disabled]="editable" >
       </div>
+      <div *ngIf="editable">
       <div class="form-group">
         <label for="eventDate">Event Date</label>
-        <input type="date" [value]="today" [min]="today" id="eventDate" name="eventDate" [(ngModel)]="order.eventDate" [disabled]="!editable">
+        <input type="text" [value]="today" [min]="today" id="eventDate" name="eventDate" [(ngModel)]="eventDateString" [disabled]="editable">
+      </div></div>
+      <div *ngIf="!editable">
+      <div class="form-group">
+        <label for="eventDate">Event Date</label>
+        <input type="date" [value]="today" [min]="today" id="eventDate" name="eventDate" [(ngModel)]="order.eventDate" [disabled]="editable">
+      </div>
       </div>
       <div class="form-group">
         <label for="eventLocation">Event Location</label>
-        <input type="text" id="eventLocation" name="eventLocation" [(ngModel)]="order.eventLocation" [disabled]="!editable">
+        <input type="text" id="eventLocation" name="eventLocation" [(ngModel)]="order.eventLocation" [disabled]="editable">
       </div>
       
       <div class="form-group">
         <label for="orderType">Order Type</label>
-        <select class="form-group" id="orderType" [(ngModel)]="order.orderType" name="orderType" [disabled]="!editable">
+        <select class="form-group" id="orderType" [(ngModel)]="order.orderType" name="orderType" [disabled]="editable">
           <option value="Event Shoot">Event PhotoShoot</option>
           <option value="Editing">Editing</option>
           <option value="Photo Frames">Photo Frames</option>
@@ -43,16 +56,20 @@
       </div>
       <div class="form-group">
         <label for="orderDescription">Order Description</label>
-        <textarea id="orderDescription" name="orderDescription" [(ngModel)]="order.orderDescription" [disabled]="!editable"></textarea>
+        <textarea id="orderDescription" name="orderDescription" [(ngModel)]="order.orderDescription" [disabled]="editable"></textarea>
       </div>
       <div>
-        <button (click)="edit()">Edit</button>
-        <button type="submit">Update Order</button>
+        <table>
+          <tr><button type="submit"><i style="font-size:24px" class="fa">&#xf0c7;</i> Update</button></tr>
+        </table>
+       
+      </div>
+      <div>
+        
       </div>
       
     </form>
-    <button (click)="downloadPDF()">Download PDF</button>
+    
   </div>
   </div>
-  
 
