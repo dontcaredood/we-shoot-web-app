@@ -1,0 +1,52 @@
+<app-navbar-full></app-navbar-full>
+<h2>Enquiries</h2>
+
+  
+  <div *ngIf="notContacted_enquiryResponse.length>0">
+    <h4>Pending Enquiries: </h4>
+  <table class="table table-striped">
+    <tr>
+      <th>Customer Name</th>
+      <th >Email</th>
+      <th >Phone</th>
+      <th>Function Date</th>
+      <th>Description</th>
+       <th colspan="2">Actions</th>
+    </tr>
+    <tr *ngFor="let u of notContacted_enquiryResponse">
+      <td>{{u.customerName}}</td>
+      <td >{{u.email}}</td>
+      <td >{{u.phoneNumber}}</td>
+      <td>{{u.functionDate | date:'dd-MM-yyyy'}}</td>
+      <td>{{u.description}}</td>
+      <td>
+        <button  (click)="updateEnquiry(u.enquiryId)" ><i style="font-size:24px" class="fa">&#xf044;</i></button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div *ngIf="notContacted_enquiryResponse.length==0"><h3>No Enquiries</h3></div>
+
+<div *ngIf="contacted_enquiryResponse.length>0">
+  <h4>Contacted Enquiries </h4>
+  <table class="table table-striped">
+    <tr>
+    <th>Customer Name</th>
+    <th >Email</th>
+    <th >Phone</th>
+    <th>Function Date</th>
+    <th>Description</th>
+  </tr>
+  <tr *ngFor="let u of contacted_enquiryResponse">
+    <td>{{u.customerName}}</td>
+    <td >{{u.email}}</td>
+    <td >{{u.phoneNumber}}</td>
+    <td>{{u.functionDate | date:'dd-MM-yyyy'}}</td>
+    <td>{{u.description}}</td>
+
+  </tr>
+  </table>
+</div>
+<div *ngIf="contacted_enquiryResponse.length==0"><h3>No Completed Enquiries!</h3></div>
+
+<router-outlet></router-outlet>

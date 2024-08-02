@@ -22,6 +22,11 @@ import { TrackOrderComponent } from './orders_club/track-order/track-order.compo
 import { OrderViewComponent } from './orders_club/order-view/order-view.component';
 import { GalleryComponent } from './layout_club/gallery/gallery.component';
 import { AboutComponent } from './layout_club/about/about.component';
+import { EnquiryComponent } from './orders_club/enquiry/enquiry.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EnquiryViewComponent } from './enquiry-view/enquiry-view.component';
+import { SidebarComponent } from './layout_club/sidebar/sidebar.component';
+import { SidebarFullComponent } from './layout_club/sidebar-full/sidebar-full.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +47,18 @@ import { AboutComponent } from './layout_club/about/about.component';
     TrackOrderComponent,
     OrderViewComponent,
     GalleryComponent,
-    AboutComponent
+    AboutComponent,
+    EnquiryComponent,
+    EnquiryViewComponent,
+    SidebarComponent,
+    SidebarFullComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule // Add HttpClientModule
   ],
   providers: [],

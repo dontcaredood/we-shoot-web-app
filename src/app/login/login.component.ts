@@ -15,11 +15,10 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit(): void {
-    console.log("TEST")
     this.authService.login(this.username, this.password).subscribe({
       next: () => {
         this.authService.setUsername(this.username);
-        this.router.navigate(['/home'])//.then(()=>window.location.reload());
+        this.router.navigate(['/dashboard'])//.then(()=>window.location.reload());
       },
       error: (err) => {
         this.errorMessage = err;

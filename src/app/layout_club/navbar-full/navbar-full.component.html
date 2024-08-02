@@ -1,27 +1,29 @@
 <nav class="navbar">
-    <div class="navbar-container">
-      <a href="/home" class="navbar-brand">We Shoot</a>
-      <ul class="navbar-menu">
-        <li class="navbar-item">
-            <a routerLink="/home" class="navbar-link">Home</a>
-          <!-- <a href="/" class="navbar-link">Home</a> -->
-        </li>
-        <li class="navbar-item">
-            <a routerLink="/add-order" class="navbar-link">Add Order</a>
-          <!-- <a href="/add-order" class="navbar-link">Add Order</a> -->
-        </li>
-        <li class="navbar-item">
+  <div class="navbar-container">
+    <a href="/dashboard" class="navbar-brand">We Shoot</a>
+    <button class="collapse-button" (click)="toggleSidebar()" aria-label="Toggle navigation">
+      &#9776; <!-- Unicode character for the hamburger menu icon -->
+    </button>
+    <ul class="navbar-menu" id="navbar-menu">
+      <li class="navbar-item">
+        <a routerLink="/dashboard" class="navbar-link">Home</a>
+      </li>
+      <li class="navbar-item">
+        <a routerLink="/add-order" class="navbar-link">Add Order</a>
+      </li>
+      <li class="navbar-item">
         <a routerLink="/view-orders" class="navbar-link">View Orders</a>
-          <!-- <a href="/view-orders" class="navbar-link">View Orders</a> -->
-        </li>
-        <li class="navbar-item">
-            <a routerLink="/view-orders" class="navbar-link">Reports</a>
-              <!-- <a href="/view-orders" class="navbar-link">View Orders</a> -->
-            </li>
-        
-        <li class="navbar-item" *ngIf="authService.isLoggedIn()">
-            <a class="navbar-link" (click)="logout()">Logout</a>
-          </li>
-      </ul>
-    </div>
-  </nav>
+      </li>
+      <li class="navbar-item">
+        <a routerLink="/view-enquiries" class="navbar-link">View Enquiries</a>
+      </li>
+      <li class="navbar-item">
+        <a routerLink="/reports" class="navbar-link">Reports</a>
+      </li>
+      <li class="navbar-item">
+        <a class="navbar-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<app-sidebar-full></app-sidebar-full>

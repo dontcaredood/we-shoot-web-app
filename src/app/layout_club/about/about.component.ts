@@ -9,23 +9,27 @@ export class AboutComponent implements OnInit {
   services = [
     {
       title: 'Event PhotoShoot',
-      description: 'Capture your special moments with our professional event photography services.'
-    },
-    {
-      title: 'Editing',
-      description: 'Our expert editors will enhance your photos to make them look stunning.'
+      description: 'Capture your special moments with our professional event photography services, tailored for weddings, corporate events, and more.'
     },
     {
       title: 'Videography',
-      description: 'Capture beautiful moments as high resolution video memories.'
+      description: 'Record high-quality video memories of your important events with our expert videography services, providing cinematic and memorable footage.'
+    },
+    {
+      title: 'Album Editing',
+      description: 'Enhance your photos with our expert album editing services, ensuring each image is polished and presented beautifully.'
     },
     {
       title: 'Photo Frames',
-      description: 'We provide high-quality photo frames to preserve your cherished memories.'
+      description: 'Preserve and display your cherished memories with our high-quality photo frames, available in various styles and sizes.'
     },
     {
-      title: 'Albums',
-      description: 'Create beautiful photo albums to relive your favorite moments.'
+      title: 'Customized Gifts',
+      description: 'Create personalized gifts like custom photo albums and unique keepsakes to celebrate special moments and loved ones.'
+    },
+    {
+      title: 'Reels Creations',
+      description: 'Design engaging and visually stunning photo and video reels to showcase your memorable moments in a dynamic format.'
     }
   ];
 

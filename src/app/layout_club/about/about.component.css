@@ -1,119 +1,89 @@
-/* .about-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .about-section, .services-section, .contact-section {
-    margin-bottom: 30px;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .service-card {
-    background: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .service-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1, h2, h3 {
-    color: #333;
-  }
-  
-  p, ul {
-    color: #555;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  }
-   */
-
-
-   .about-container {
+/* About Container */
+.about-container {
+    font-family: 'Arial', sans-serif;
     padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #f4f4f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    background-color: #f8f9fa;
   }
   
-  .about-container:hover {
-    transform: translateY(-5px);
-  }
-  
-  .about-section, .services-section, .contact-section {
+  /* About Section */
+  .about-section {
     margin-bottom: 40px;
+    text-align: center;
+    animation: fadeInUp 1s ease;
   }
   
-  .about-section h1, .services-section h2, .contact-section h2 {
-    font-size: 2em;
+  .about-section h1 {
+    font-size: 2.5rem;
+    color: #343a40;
     margin-bottom: 20px;
-    color: #007bff;
-    position: relative;
   }
   
-  .about-section h1::after, .services-section h2::after, .contact-section h2::after {
-    content: '';
-    width: 50px;
-    height: 4px;
-    background-color: #007bff;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    border-radius: 2px;
+  .about-section p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Services Section */
+  .services-section {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInUp 1.2s ease;
+  }
+  
+  .services-section h2 {
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 20px;
   }
   
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
   }
   
   .service-card {
-    background: #ffffff;
+    background-color: #ffffff;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .service-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background: #007bff;
-    color: #ffffff;
   }
   
   .service-card h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    color: #343a40;
     margin-bottom: 10px;
   }
   
   .service-card p {
-    font-size: 1em;
-    margin-bottom: 0;
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    text-align: center;
+    animation: fadeInUp 1.4s ease;
+  }
+  
+  .contact-section h2 {
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 20px;
+  }
+  
+  .contact-section p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 20px;
   }
   
   .contact-section ul {
@@ -121,18 +91,66 @@
     padding: 0;
   }
   
-  .contact-section ul li {
-    margin-bottom: 15px;
-    font-size: 1.1em;
+  .contact-section li {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 10px;
   }
   
-  .contact-section ul li a {
+  .contact-section a {
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
-  .contact-section ul li a:hover {
+  .contact-section a:hover {
     color: #0056b3;
+  }
+  
+  /* Keyframes for Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .about-section h1 {
+      font-size: 1.8rem;
+    }
+  
+    .about-section p {
+      font-size: 1rem;
+    }
+  
+    .services-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .service-card h3 {
+      font-size: 1.25rem;
+    }
+  
+    .service-card p {
+      font-size: 0.875rem;
+    }
+  
+    .contact-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .contact-section p {
+      font-size: 1rem;
+    }
+  
+    .contact-section li {
+      font-size: 1rem;
+    }
   }
   

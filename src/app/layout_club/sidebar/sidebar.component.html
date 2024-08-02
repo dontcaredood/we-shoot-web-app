@@ -1,0 +1,20 @@
+<div class="sidebar" [class.active]="isActive">
+    <ul class="sidebar-menu">
+      <li class="sidebar-item">
+        <a routerLink="" class="sidebar-link" (click)="toggleSidebar()">Home</a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/gallery" class="sidebar-link" (click)="toggleSidebar()">Gallery</a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/about" class="sidebar-link" (click)="toggleSidebar()">About Us</a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/enquiry" class="sidebar-link" (click)="toggleSidebar()">Enquiry</a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" routerLink="/login" (click)="toggleSidebar()">Login</a>
+      </li>
+    </ul>
+  </div>
+  

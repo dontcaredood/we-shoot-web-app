@@ -1,9 +1,16 @@
 <app-navbar></app-navbar>
 <div class="gallery-container">
-    <div class="photo-grid">
-      <div class="photo-item" *ngFor="let photo of photos">
-        <img [src]="photo.url" [alt]="photo.title" />
-        <div class="photo-title">{{ photo.title }}</div>
-      </div>
+  <div class="photo-grid">
+    <div class="photo-item" *ngFor="let photo of photos" (click)="openModal(photo.url)">
+      <img [src]="photo.url" [alt]="photo.title" />
+      <div class="photo-title">{{ photo.title }}</div>
     </div>
   </div>
+</div>
+
+<!-- Modal for full-size image -->
+<div id="myModal" class="modal" (click)="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>

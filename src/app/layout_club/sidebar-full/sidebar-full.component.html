@@ -1,0 +1,23 @@
+<div class="sidebar" [class.active]="isActive">
+    <ul class="sidebar-menu">
+      <li class="sidebar-item">
+        <a routerLink="" class="sidebar-link" (click)="toggleSidebar()">Home</a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/add-order" class="sidebar-link" (click)="toggleSidebar()">Add Order</a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/view-orders" class="sidebar-link" (click)="toggleSidebar()">View Orders</a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/view-enquiries" class="sidebar-link" (click)="toggleSidebar()">View Enquiries</a>
+      </li>
+      <li class="sidebar-item">
+        <a routerLink="/view-enquiries" class="sidebar-link" (click)="toggleSidebar()">Reports</a>
+      </li>
+      <li class="navbar-item">
+        <a class="navbar-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+  

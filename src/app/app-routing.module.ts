@@ -13,28 +13,34 @@ import { TrackOrderComponent } from './orders_club/track-order/track-order.compo
 import { OrderViewComponent } from './orders_club/order-view/order-view.component';
 import { GalleryComponent } from './layout_club/gallery/gallery.component';
 import { AboutComponent } from './layout_club/about/about.component';
+import { EnquiryComponent } from './orders_club/enquiry/enquiry.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { EnquiryViewComponent } from './enquiry-view/enquiry-view.component';
+
 const routes: Routes = [
-  { path: '***', redirectTo: '/', pathMatch: 'full' },
-  { path: '', component: HomeComponent },
-  { path: 'home', component: DashboardComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'gallery', component: GalleryComponent },
-  {path:'about', component:AboutComponent},
-  { path: 'view-orders', component: ViewOrdersComponent, canActivate: [AuthGuard]},
-  { path: 'order/:id', component:OrderViewComponent, canActivate: [AuthGuard],
-    children:[
-      {
-        path:'track', component:TrackOrderComponent,canActivate:[AuthGuard]
-      }
+  { path: 'enquiry', component: EnquiryComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'view-orders', component: ViewOrdersComponent, canActivate: [AuthGuard] },
+  { path: 'view-enquiries', component: EnquiryViewComponent, canActivate: [AuthGuard] },
+  { path: 'order/:id', component: OrderViewComponent, canActivate: [AuthGuard],
+    children: [
+      { path: 'track', component: TrackOrderComponent, canActivate: [AuthGuard] }
     ]
   },
-  { path: 'orderHistory/:id', component:OrderHistoryComponent, canActivate: [AuthGuard]},
-  { path: 'invoice/:id', component:ViewInvoiceComponent, canActivate: [AuthGuard]},
-  { path: 'add-order', component: AddOrderComponent , canActivate: [AuthGuard]},
+  { path: 'orderHistory/:id', component: OrderHistoryComponent, canActivate: [AuthGuard] },
+  { path: 'invoice/:id', component: ViewInvoiceComponent, canActivate: [AuthGuard] },
+  { path: 'add-order', component: AddOrderComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'home' } // Catch-all route for undefined paths
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
+  exports: [RouterModule],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
 })
 export class AppRoutingModule { }
