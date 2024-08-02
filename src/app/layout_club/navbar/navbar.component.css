@@ -1,27 +1,35 @@
+/* Navbar styling */
 .navbar {
-  background-color: #366696;
+  background-color: #333;
+  color: #fff;
   padding: 10px 20px;
-  font-family: Arial, sans-serif;
 }
 
 .navbar-container {
-  height: 50px;
   display: flex;
-  align-items: center;
+  width: auto;
   justify-content: space-between;
-  max-width: 1500px;
-  margin: 0 auto;
+  align-items: center;
 }
 
 .navbar-brand {
-  color: #fff;
   font-size: 1.5rem;
+  color: #fff;
   text-decoration: none;
 }
 
+.collapse-button {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
 .navbar-menu {
-  display: flex;
   list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
@@ -33,31 +41,31 @@
 .navbar-link {
   color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+  font-size: 1rem;
 }
 
-.navbar-link:hover {
-  color: #ccd3db;
-}
-
-/* Collapse Button Styles */
-.collapse-button {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Mobile View Styles */
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-  .navbar-menu {
-    display: none;
-  }
-
   .collapse-button {
     display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    text-align: right;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-item {
+    margin: 10px 20px;
   }
 }
