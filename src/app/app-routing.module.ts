@@ -17,6 +17,7 @@ import { EnquiryComponent } from './orders_club/enquiry/enquiry.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { EnquiryViewComponent } from './enquiry-view/enquiry-view.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },

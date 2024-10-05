@@ -17,7 +17,7 @@
   
   .images-section img, .images-section_left img {
     width: 400px;
-    height: 500px;
+    height: auto;
     margin: 10px;
     transition: transform 0.5s ease-in-out;
   }

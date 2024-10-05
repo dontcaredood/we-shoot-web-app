@@ -1,39 +1,46 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    right: -250px; /* Start off-screen to the right */
-    width: 250px;
-    height: 100%;
-    background-color: #343a40;
-    overflow-x: hidden;
-    transition: right 0.3s ease; /* Smooth transition for sliding */
-    z-index: 1000;
-    padding-top: 60px;
-  }
-  
-  .sidebar.active {
-    right: 0; /* Slide in the sidebar */
-  }
-  
-  .sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar-item {
-    padding: 10px 20px;
-  }
-  
-  .sidebar-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: block;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar-link:hover {
-    background-color: #575757;
-  }
-  
+  width: 250px; /* Set the width of the sidebar */
+  height: 100vh; /* Full height of the viewport */
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  position: fixed; /* Keep it fixed on the left */
+  left: -250px; /* Hide it off-screen initially */
+  transition: left 0.3s ease; /* Smooth transition for slide-in effect */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.sidebar.active {
+  left: 0; /* Bring it into view when active */
+}
+
+.sidebar-menu {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.sidebar-item {
+  margin: 10px 0; /* Spacing between items */
+}
+
+.sidebar-item a {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Vertically center content */
+  padding: 10px; /* Add padding for clickable area */
+  text-decoration: none; /* Remove underline from links */
+  color: #fff; /* Text color */
+  font-weight: 500; /* Font weight */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.sidebar-item a:hover {
+  background-color: #575757; /* Darken background on hover */
+  border-radius: 4px; /* Add rounded corners on hover */
+}
+
+.sidebar-item a img {
+  margin-right: 10px; /* Space between the image and text */
+  width: 25px; /* Set a standard width for images */
+  height: 25px; /* Set a standard height for images */
+  vertical-align: middle; /* Align image vertically in the middle */
+}

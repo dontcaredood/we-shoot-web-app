@@ -8,15 +8,48 @@ import { Component, OnInit } from '@angular/core';
 export class GalleryComponent implements OnInit {
 
   photos = [
-    { url: 'assets/images/photo1.jpeg', title: 'Photo 1' },
-    { url: 'assets/images/photo2.jpeg', title: 'Photo 2' },
-    { url: 'assets/images/mirrors 4.png', title: 'Photo 3' },
-    { url: 'assets/images/mirrors 6.png', title: 'Photo 4' },
-    { url: 'assets/images/mirrors 5.png', title: 'Photo 5' },
-    { url: 'assets/images/mirrors 7.png', title: 'Photo 6' },
-    { url: 'assets/images/photo1.jpeg', title: 'Photo 7' },
-    { url: 'assets/images/photo2.jpeg', title: 'Photo 2' },
-    { url: 'assets/images/photo1.jpeg', title: 'Photo 1' }
+    //wedding 
+    { url: 'assets/images/wedding1.jpeg', title: 'Wedding' },
+    { url: 'assets/images/wedding2.jpg', title: 'Wedding' },
+    { url: 'assets/images/wedding3.jpeg', title: 'Wedding' },
+    { url: 'assets/images/wedding4.jpg', title: 'Wedding' },
+    //model
+    { url: 'assets/images/model1.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/model2.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/model3.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/model4.jpg', title: 'Model Shoot' },
+    //groom-wedding
+    { url: 'assets/images/groom1.jpg', title: 'Groom' },
+    { url: 'assets/images/groom2.jpg', title: 'Groom' },
+    { url: 'assets/images/groom3.jpg', title: 'Groom' },
+    { url: 'assets/images/groom4.jpg', title: 'Groom' },
+    //model
+    { url: 'assets/images/photo3.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/photo4.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/model2_3.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/model2_4.jpg', title: 'Model Shoot' },
+    //wedding 
+    { url: 'assets/images/wedding5.jpg', title: 'Wedding' },
+    { url: 'assets/images/wedding6.jpg', title: 'Wedding' },
+    { url: 'assets/images/wedding7.JPG', title: 'Wedding' },
+    { url: 'assets/images/wedding8.jpg', title: 'Wedding' },
+    //model
+    { url: 'assets/images/photo9.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/photo10.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/photo11.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/photo12.jpg', title: 'Model Shoot' },
+
+    //wedding 
+    { url: 'assets/images/bride1.jpg', title: 'Bride' },
+    { url: 'assets/images/bride2.jpg', title: 'Bride' },
+    { url: 'assets/images/bride3.jpg', title: 'Bride' },
+    { url: 'assets/images/bride4.jpg', title: 'Bride' },
+    //model
+    
+    { url: 'assets/images/photo13.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/photo14.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/photo15.jpg', title: 'Model Shoot' },
+    { url: 'assets/images/photo16.jpg', title: 'Model Shoot' },
     
   ];
 
