@@ -9,9 +9,9 @@ export class GalleryComponent implements OnInit {
 
   photos = [
     //wedding 
-    { url: 'assets/images/wedding1.jpeg', title: 'Wedding' },
+    { url: 'assets/images/wedding1.jpg', title: 'Wedding' },
     { url: 'assets/images/wedding2.jpg', title: 'Wedding' },
-    { url: 'assets/images/wedding3.jpeg', title: 'Wedding' },
+    { url: 'assets/images/wedding3.jpg', title: 'Wedding' },
     { url: 'assets/images/wedding4.jpg', title: 'Wedding' },
     //model
     { url: 'assets/images/model1.jpg', title: 'Model Shoot' },
