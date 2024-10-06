@@ -1,5 +1,17 @@
 <app-navbar></app-navbar>
+
+<!-- Gallery Description at the top of the page -->
+<div class="gallery-description-container">
+  <div class="gallery-description">
+    <h2>Our Photography Gallery</h2>
+    <p>
+      Welcome to the We Shoot Photo Company gallery, where we showcase some of our finest work. Each photograph is a testament to our dedication to capturing beautiful moments, from weddings and portraits to stunning landscapes. Explore our diverse range of styles and let our photography tell the story.
+    </p>
+  </div>
+</div>
+
 <div class="gallery-container">
+  <!-- Photo Grid -->
   <div class="photo-grid">
     <div class="photo-item" *ngFor="let photo of photos" (click)="openModal(photo.url)">
       <img [src]="photo.url" [alt]="photo.title" />
@@ -14,3 +26,10 @@
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
+
+<!-- Footer Section -->
+<footer class="footer-container">
+  <div class="footer-content">
+    <p>&copy; 2024 We Shoot Photo Company. All Rights Reserved.</p>
+  </div>
+</footer>
